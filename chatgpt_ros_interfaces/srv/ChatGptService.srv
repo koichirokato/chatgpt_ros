@@ -1,0 +1,4 @@
+string text
+int64 length
+---
+string response

@@ -3,10 +3,9 @@ import requests
 class ChatGPT:
     def __init__(self, api_key):
         self.api_key = api_key
-        #self.endpoint = "https://api.openai.com/v1/engines/davinci-codex/completions"
         self.endpoint = "https://api.openai.com/v1/chat/completions"
     
-    def generate_text(self, prompt):
+    def generate_text(self, prompt, length=50):
         headers = {
             "Content-Type": "application/json",
             "Authorization": f"Bearer {self.api_key}"
@@ -16,7 +15,7 @@ class ChatGPT:
             "messages": [
                     {"role":"user", "content":prompt}
                 ],
-            "max_tokens": 50,
+            "max_tokens": length,
             "temperature": 0.5,
             "n": 1,
             "stop": "."
