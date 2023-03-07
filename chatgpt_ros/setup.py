@@ -9,7 +9,6 @@ setup(
     data_files=[
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
-        ('share/' + package_name, ['package.xml']),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -21,6 +20,7 @@ setup(
     entry_points={
         'console_scripts': [
             'chatgpt_ros = '+ package_name +'.chatgpt_ros:main',
+            'chatgpt_ros_service = '+ package_name +'.chatgpt_ros_service_server:main',
         ],
     },
 )
