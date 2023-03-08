@@ -7,8 +7,8 @@ import os
 
 class ChatGptServiceServer(Node):
     def __init__(self):
-        super().__init__('chat_gpt_service_server')
-        self.srv = self.create_service(ChatGptService, 'chat_gpt_service', self.gpt_service_callback)
+        super().__init__('chatgpt_service_server')
+        self.srv = self.create_service(ChatGptService, 'chatgpt_service', self.gpt_service_callback)
 
     def gpt_service_callback(self, request, response):
         text = request.text

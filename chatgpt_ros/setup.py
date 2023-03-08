@@ -21,6 +21,7 @@ setup(
         'console_scripts': [
             'chatgpt_ros = '+ package_name +'.chatgpt_ros:main',
             'chatgpt_ros_service = '+ package_name +'.chatgpt_ros_service_server:main',
+            'client_sample = '+ package_name +'.chatgpt_ros_service_client:main',
         ],
     },
 )
