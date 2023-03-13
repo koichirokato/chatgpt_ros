@@ -26,7 +26,7 @@ $ ros2 run chatgpt_ros chatgpt_ros
 ```
 
 ## ROS Service
-`chatgpt_ros_service` node is the server of ros service of `chat_gpt_service`.
+`chatgpt_ros_service` node is the server of ros service of `chatgpt_service`.
 You can see srv file is in `chatgpt_ros_interfaces/srv`.
 
 ### Run
