@@ -7,7 +7,7 @@ def main(args=None):
 
     node = rclpy.create_node('chat_gpt_service_client')
 
-    client = node.create_client(ChatGptService, 'chat_gpt_service')
+    client = node.create_client(ChatGptService, 'chatgpt_service')
     while not client.wait_for_service(timeout_sec=1.0):
         node.get_logger().info('Waiting for service')
 

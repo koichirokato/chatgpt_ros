@@ -1,6 +1,10 @@
 # chatgpt_ros
 ROS wrapper for ChatGPT API
 
+日本語でQiitaの記事を投稿しました。併せてご覧ください。
+Below link is about this repository, in Janapese.
+https://qiita.com/koichi_baseball/items/0a29bbe846f9e3fdfd5a
+
 ## Dependencies
 Python requests modeule.
 
@@ -22,7 +26,7 @@ $ ros2 run chatgpt_ros chatgpt_ros
 ```
 
 ## ROS Service
-`chatgpt_ros_service` node is the server of ros service of `chat_gpt_service`.
+`chatgpt_ros_service` node is the server of ros service of `chatgpt_service`.
 You can see srv file is in `chatgpt_ros_interfaces/srv`.
 
 ### Run
