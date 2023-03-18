@@ -14,14 +14,14 @@ setup(
     zip_safe=True,
     maintainer='koichi',
     maintainer_email='k.koichiro0222@gmail.com',
-    description='TODO: Package description',
-    license='TODO: License declaration',
+    description='ChattGPT API ROS2 wrapper',
+    license='Apache 2.0',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'chatgpt_ros = '+ package_name +'.chatgpt_ros:main',
-            'chatgpt_ros_service = '+ package_name +'.chatgpt_ros_service_server:main',
-            'client_sample = '+ package_name +'.chatgpt_ros_service_client:main',
+            'chatgpt_ros = ' + package_name + '.chatgpt_ros:main',
+            'chatgpt_ros_service = ' + package_name + '.chatgpt_ros_service_server:main',
+            'client_sample = ' + package_name + '.chatgpt_ros_service_client:main',
         ],
     },
 )
