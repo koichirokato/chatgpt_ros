@@ -1,8 +1,11 @@
 import rclpy
-from rclpy.node import Node
 from chatgpt_ros_interfaces.srv import ChatGptService
 
+
 def main(args=None):
+    '''
+    sample service client
+    '''
     rclpy.init(args=args)
 
     node = rclpy.create_node('chat_gpt_service_client')
@@ -11,14 +14,15 @@ def main(args=None):
     while not client.wait_for_service(timeout_sec=1.0):
         node.get_logger().info('Waiting for service')
 
-    node.get_logger().info('Please enter your prompt for ChatGPT API. If you want to exit, please enter "quit"')
+    node.get_logger().info('Please enter your prompt for ChatGPT API. \
+                            If you want to exit, please enter "quit"')
     while True:
         request = ChatGptService.Request()
-        prompt = input("> ")
-        if prompt=='quit':
+        prompt = input('>')
+        if prompt == 'quit':
             node.get_logger().info('Exit')
             break
-        elif len(prompt)==0:
+        elif len(prompt) == 0:
             continue
         request.text = prompt
         request.length = 50
@@ -34,6 +38,7 @@ def main(args=None):
 
     node.destroy_node()
     rclpy.shutdown()
+
 
 if __name__ == '__main__':
     main()

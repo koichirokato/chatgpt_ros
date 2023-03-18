@@ -1,0 +1,8 @@
+chatgpt_service_server:
+  ros__parameters:
+    system_role:
+      use_system_role : false
+      content : "You have to return JSON format"
+    assistant_role:
+      hold_passed_response : false
+      num_passed_response : 5
