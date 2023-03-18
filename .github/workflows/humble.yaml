@@ -1,0 +1,13 @@
+name: ros2_humble
+on: [push]
+jobs:
+  workflows-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checking out
+        uses: actions/checkout@v2.3.4
+      - name: Build and test
+        uses: OUXT-Polaris/ros2-ci@master
+        with:
+          apt-packages: python3-requests
+          ros2-distro: humble
