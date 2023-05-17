@@ -1,7 +1,7 @@
 # chatgpt_ros
 ROS wrapper for ChatGPT API
 
-日本語でQiitaの記事を投稿しました。併せてご覧ください。
+日本語でQiitaの記事を投稿しました。併せてご覧ください。  
 Below link is about this repository, in Janapese.
 https://qiita.com/koichi_baseball/items/0a29bbe846f9e3fdfd5a
 
