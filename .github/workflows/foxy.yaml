@@ -1,5 +1,5 @@
 name: ros2_humble
-on: [push]
+on: [push, pull_request]
 jobs:
   workflows-test:
     runs-on: ubuntu-latest
@@ -10,4 +10,4 @@ jobs:
         uses: OUXT-Polaris/ros2-ci@master
         with:
           apt-packages: python3-requests
-          ros2-distro: humble
+          ros2-distro: foxy
