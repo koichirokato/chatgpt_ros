@@ -7,7 +7,7 @@ import os
 
 
 class ChatGptServiceServer(Node):
-    def __init__(self):
+    def __init__(self) -> None:
         """
         constructer
         """
@@ -25,21 +25,21 @@ class ChatGptServiceServer(Node):
         self.declare_parameter("assistant_role.hold_passed_response", False)
         self.declare_parameter("assistant_role.num_passed_response", 0)
 
-        use_system_role = (
+        use_system_role: bool = (
             self.get_parameter("system_role.use_system_role")
             .get_parameter_value()
             .bool_value
         )
-        system_content = (
+        system_content: str = (
             self.get_parameter("system_role.content").get_parameter_value().string_value
         )
 
-        hold_passed_response = (
+        hold_passed_response: bool = (
             self.get_parameter("assistant_role.hold_passed_response")
             .get_parameter_value()
             .bool_value
         )
-        num_passed_response = (
+        num_passed_response: int = (
             self.get_parameter("assistant_role.num_passed_response")
             .get_parameter_value()
             .integer_value
@@ -51,7 +51,9 @@ class ChatGptServiceServer(Node):
         if hold_passed_response:
             self.gpt.num_hold_pass_res = num_passed_response
 
-    def gpt_service_callback(self, request, response):
+    def gpt_service_callback(
+        self, request: ChatGptService.Request, response: ChatGptService.Response
+    ) -> ChatGptService.Response:
         """
         Service callback function
 
@@ -62,8 +64,8 @@ class ChatGptServiceServer(Node):
         response : ChatGptService.response
             response for ros service
         """
-        text = request.text
-        length = request.length
+        text: str = request.text
+        length: str = request.length
         response.response = self.gpt.generate_text(text, length)
         return response
 
